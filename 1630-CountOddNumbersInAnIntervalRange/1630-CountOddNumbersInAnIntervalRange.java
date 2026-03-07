@@ -1,0 +1,11 @@
+// Last updated: 3/7/2026, 10:35:14 PM
+class Solution {
+    public int countOdds(int low, int high) {
+        
+        int count= (high-low)/2 ;
+        if(low%2!=0 || high%2!=0){
+            count+=1;
+        }
+     return count;
+    }
+}
