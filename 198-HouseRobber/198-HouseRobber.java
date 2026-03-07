@@ -1,0 +1,15 @@
+// Last updated: 3/7/2026, 10:36:13 PM
+class Solution {
+    public int rob(int[] nums) {
+        int prev2 = 0; // nums[i-2]
+        int prev1 = 0; // nums[i-1]
+
+        for (int num : nums) {
+            int curr = Math.max(prev1, prev2 + num);
+            prev2 = prev1;
+            prev1 = curr;
+        }
+
+        return prev1;
+    }
+}
