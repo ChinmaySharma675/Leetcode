@@ -1,0 +1,18 @@
+// Last updated: 8/9/2026, 6:56:51 PM
+class Solution {
+    public int hIndex(int[] citations) {
+        int n=citations.length;
+        int l=0;
+        int r=n-1;
+        while(l<=r){
+            int mid=l+(r-l)/2;
+
+            if(citations[mid]>=(n-mid)){
+                r=mid-1;
+            }else{
+                l=mid+1;
+            }
+        }
+        return n-l;
+    }
+}
